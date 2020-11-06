@@ -1,0 +1,43 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WaveTwoo - Poety</title>
+
+    <link rel="stylesheet" href="{% static "poety/css/master.css" %}">
+
+  </head>
+  <body>
+
+    <main class="container">
+      <article class="snap-history">
+
+        <ul class="snap-list">
+          {% for snap in snaps %}
+
+          <li id="snap_{{ snap.id }}" class="snap-item">
+            <h2 class="title">{{ snap.title }}</h2>
+            <img class="image lazyload" data-src="{{ snap.image.url }}" alt="Snap Poety">
+            <p class="description">{{ snap.text }}</p>
+          </li>
+
+          {% if not forloop.last %}
+          <i class="divider-12"></i>
+          {% endif %}
+
+          {% endfor %}
+
+        </ul>
+      </article>
+    </main>
+
+    <script src="{% static "poety/node_modules/lazyload/lazyload.min.js" %}"></script>
+    <script type="text/javascript">
+      lazyload();
+    </script>
+
+  </body>
+</html>

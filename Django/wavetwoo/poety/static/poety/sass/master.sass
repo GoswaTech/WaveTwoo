@@ -1,0 +1,45 @@
+body
+  font-family: monospace
+
+i.divider-12
+  width: 12px
+  height: 12px
+  display: inline-block
+
+ul.snap-list
+  list-style-type: none
+
+  max-width: 512px
+  margin: auto
+  padding: 12px 24px
+
+  background-color: green
+
+  & li.snap-item
+    position: relative
+
+    width: 100%
+    //height: 256px
+    height: auto
+
+    display: flex
+    flex-direction: column
+
+    background-color: red
+
+    & h2.title
+      text-align: center
+      text-transform: uppercase
+
+    & img.image
+      //position: absolute
+      //top: 0
+      //left: 0
+
+      width: 100%
+      height: 100%
+      object-fit: contain
+      object-position: center
+
+    & p.description
+      padding: 12px 24px
