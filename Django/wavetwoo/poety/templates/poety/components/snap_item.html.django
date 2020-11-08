@@ -1,0 +1,14 @@
+<li id="snap_{{ snap.id }}" class="snap-item {% if not forloop.first %}hide{% endif %}">
+
+  <div class="snap-box {% if forloop.counter0|divisibleby:2 %}sb-pair{% else %}sb-impair{% endif %}">
+    <div class="snap-image">
+      <img class="image lazyload" data-src="{{ snap.image.url }}" alt="Snap Poety">
+
+    </div>
+    <div class="snap-text d-none d-md-flex">
+        <h2 class="title">{{ snap.title }}</h2>
+        <p class="description">{{ snap.text }}</p>
+
+    </div>
+  </div>
+</li>

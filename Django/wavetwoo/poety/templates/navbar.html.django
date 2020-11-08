@@ -1,0 +1,10 @@
+<nav class="fixed-top">
+  <div class="container">
+    <h1 class="text-center my-3 py-2">
+      <b>
+        {{ h1_title }}
+
+      </b>
+    </h1>
+  </div>
+</nav>

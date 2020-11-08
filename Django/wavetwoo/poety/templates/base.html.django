@@ -1,0 +1,40 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}WaveTwoo{% endblock title %}</title>
+
+    {% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    {% endblock stylesheets %}
+
+  </head>
+  <body>
+
+    {% block navbar %}
+      {% include "navbar.html.django" with h1_title='Home' %}
+    {% endblock navbar %}
+
+
+    {% block main %}
+    {% endblock main %}
+
+
+    {% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="{% static "poety/node_modules/bootstrap/dist/js/bootstrap.min.js" %}"  type="text/javascript"></script>
+    <script src="{% static "poety/node_modules/lazyload/lazyload.min.js" %}"></script>
+    <script type="text/javascript">
+    lazyload();
+
+    </script>
+    {% endblock javascripts %}
+
+  </body>
+</html>
