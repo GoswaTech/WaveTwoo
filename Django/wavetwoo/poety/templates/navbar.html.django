@@ -1,5 +1,33 @@
-<nav class="poety-navbar">
-  <div class="current-page">
-    {{ h1_title }}
+{% load static %}
+
+<nav class="wavetwoo-navbar">
+  <div class="nav-content">
+    <div class="background">
+      <h2 class="text-center">
+        {{ h1_title }}
+      </h2>
+      <div class="other-pages">
+        <p>
+          Vous pouvez visiter d'autres blogs du site WaveTwoo en cliquant sur
+          l'un de ces liens :
+          <ul>
+            <li>
+              <a href="#">No Link</a>
+            </li>
+            <li>
+              <a href="#">No Link</a>
+            </li>
+            <li>
+              <a href="#">No Link</a>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+    <div class="foreground">
+      <svg class="bi" width="32" height="32" fill="currentColor">
+        <use xlink:href="{% static "www/node_modules/bootstrap-icons/bootstrap-icons.svg" %}#moon"/>
+      </svg>
+    </div>
   </div>
 </nav>

@@ -20,16 +20,21 @@
 
 {% block main %}
 <main class="container p-0">
+
   <article class="snap-history">
 
     <ul id="snap_list" class="snap-list" data-current=0>
 
-      {% for snap in snaps %}
-        {% include "poety/components/snap_item.html.django" %}
-      {% endfor %}
+      <h1>Snap History</h1>
 
       <div id="snap_progress_bar" class="progress w-100">
         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="1.618" aria-valuemin="0" aria-valuemax="100" style="width: 1.618%"></div>
+      </div>
+
+      <div class="position-relative w-100 h-100">
+        {% for snap in snaps %}
+          {% include "poety/components/snap_item.html.django" %}
+        {% endfor %}
       </div>
 
       <div class="commands-box d-flex flex-column justify-content-center align-items-center">

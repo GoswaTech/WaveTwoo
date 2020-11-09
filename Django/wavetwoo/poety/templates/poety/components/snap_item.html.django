@@ -1,3 +1,5 @@
+{% load markdown_deux_tags %}
+
 <li id="snap_{{ snap.id }}" class="snap-item {% if not forloop.first %}hide{% endif %}">
 
   <div class="snap-box {% if forloop.counter0|divisibleby:2 %}sb-pair{% else %}sb-impair{% endif %}">
@@ -7,8 +9,13 @@
     </div>
     <div class="snap-text d-none d-md-flex">
         <h2 class="title">{{ snap.title }}</h2>
-        <p class="description">{{ snap.text }}</p>
+        <p class="description">{{ snap.text | markdown }}</p>
 
     </div>
+  </div>
+  <div class="snap-text d-flex d-md-none">
+    <h2 class="title">{{ snap.title }}</h2>
+    <p class="description">{{ snap.text | markdown }}</p>
+
   </div>
 </li>

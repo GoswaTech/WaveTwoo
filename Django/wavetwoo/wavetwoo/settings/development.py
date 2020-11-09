@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'poety.apps.PoetyConfig',
     'www.apps.WwwConfig',
+    'markdown_deux',
 ]
 
 MIDDLEWARE = [
