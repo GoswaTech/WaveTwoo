@@ -41,17 +41,23 @@ ul.snap-list
   overflow-x: hidden
   overflow-y: hidden
 
-  & div.link-box
+  & div.commands-box
     position: absolute
     bottom: 0
     left: 0
     width: 100%
 
-    & a
-      background-color: $accent
+    padding: 0 24px
 
+    & a
       margin: 12px
-      padding: 12px 24px
+      //padding: 12px 24px
+
+      font-size: 12px
+      color: $accent
+      transition-duration: 0.42s
+      &:hover
+        color: white
 
   & li.snap-item
 
@@ -84,6 +90,8 @@ ul.snap-list
       height: 100%
 
       display: flex
+      justify-content: center
+      align-items: center
 
       &.sb-pair
         & div.snap-image
