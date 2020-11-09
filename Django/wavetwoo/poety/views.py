@@ -6,7 +6,7 @@ from .models import SnapPoety
 # Create your views here.
 def snap_history(request):
 
-    snaps = SnapPoety.objects.order_by('date')
+    snaps = SnapPoety.objects.order_by('date').all()
 
     context = {
         'snaps': snaps,
