@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'poety.apps.PoetyConfig',
+    'reality.apps.RealityConfig',
     'www.apps.WwwConfig',
     'markdown_deux',
 ]

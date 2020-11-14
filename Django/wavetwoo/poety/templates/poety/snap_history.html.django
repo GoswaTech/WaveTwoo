@@ -1,4 +1,4 @@
-{% extends "base.html.django" %}
+{% extends "www/base.html.django" %}
 
 {% load static %}
 
@@ -8,13 +8,12 @@
 
 {% block stylesheets %}
 {{ block.super }}
-<link rel="stylesheet" href="{% static "poety/node_modules/bootstrap/dist/css/bootstrap.min.css" %}">
 <link rel="stylesheet" href="{% static "poety/css/master.css" %}">
 {% endblock stylesheets %}
 
 
 {% block navbar %}
-  {% include "navbar.html.django" with h1_title='Snap History' %}
+  {% include "poety/navbar.html.django" with h1_title='Snap History' %}
 {% endblock navbar %}
 
 

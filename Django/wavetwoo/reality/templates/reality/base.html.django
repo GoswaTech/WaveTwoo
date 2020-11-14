@@ -1,0 +1,25 @@
+{% extends "www/base.html.django" %}
+
+{% load static %}
+
+
+{% block title %}CookTea{% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static "reality/cooktea/css/master.css" %}">
+{% endblock stylesheets %}
+
+{% block navbar %}
+<nav class="navbar fixed-top bg-dark text-light">
+  <div class="container">
+    <div class="d-flex w-100 justify-content-center align-items-center">
+      <h1 class="title">CookTea</h1>
+      <div class="d-flex ml-auto">
+        <a href="{% url 'cooktea_home' %}">home</a>
+
+      </div>
+    </div>
+  </div>
+</nav>
+{% endblock navbar %}

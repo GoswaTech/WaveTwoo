@@ -1,0 +1,123 @@
+{% extends "reality/base.html.django" %}
+
+{% block title %}{{ block.super }} - Cooktsu : {{ cooktsu.alchemy_name }}{% endblock title %}
+
+{% block main %}
+
+<main class="container mt-5 pt-5">
+
+  <div class="card p-5 position-relative text-light">
+    <img class="background" src="https://source.unsplash.com/random/" alt="Cooktsu Image">
+    <i class="filter"></i>
+    <div class="card-body position-relative">
+      <div class="card-text text-center">
+        <h1>{{ cooktsu.alchemy_name }}</h1>
+        <h2>
+          <small>
+            {{ cooktsu.name }}
+
+          </small>
+        </h2>
+      </div>
+    </div>
+    <div class="card-body position-relative">
+      <div class="row text-dark text-center">
+        <div class="p-3 col-md-6 col-12 bg-red">
+          <h3>Ingrédients Terre</h3>
+          <ul class="list-group m-3">
+            {% for ingredient in cooktsu.get_red_ingredients %}
+              <li class="list-group-item">
+                {{ ingredient.name }} : {{ ingredient.quantity }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="p-3 col-md-6 col-12 bg-orange">
+          <h3>Ingrédients Eau</h3>
+          <ul class="list-group m-3">
+            {% for ingredient in cooktsu.get_orange_ingredients %}
+              <li class="list-group-item">
+                {{ ingredient.name }} : {{ ingredient.quantity }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="p-3 col-md-6 col-12 bg-green">
+          <h3>Ingrédients Air</h3>
+          <ul class="list-group m-3">
+            {% for ingredient in cooktsu.get_green_ingredients %}
+              <li class="list-group-item">
+                {{ ingredient.name }} : {{ ingredient.quantity }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="p-3 col-md-6 col-12 bg-yellow">
+          <h3>Ingrédients Feu</h3>
+          <ul class="list-group m-3">
+            {% for ingredient in cooktsu.get_yellow_ingredients %}
+              <li class="list-group-item">
+                {{ ingredient.name }} : {{ ingredient.quantity }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="red" class="card bg-red">
+    <div class="card-body">
+      <div class="card-text">
+        <h3>
+          <i>terre</i>
+        </h3>
+        <p>
+          {{ cooktsu.red.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="orange" class="card bg-orange">
+    <div class="card-body">
+      <div class="card-text">
+        <h3>
+          <i>eau</i>
+        </h3>
+        <p>
+          {{ cooktsu.orange.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="green" class="card bg-green">
+    <div class="card-body">
+      <div class="card-text">
+        <h3>
+          <i>air</i>
+        </h3>
+        <p>
+          {{ cooktsu.green.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="yellow" class="card bg-yellow">
+    <div class="card-body">
+      <div class="card-text">
+        <h3>
+          <i>feu</i>
+        </h3>
+        <p>
+          {{ cooktsu.yellow.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% endblock main %}

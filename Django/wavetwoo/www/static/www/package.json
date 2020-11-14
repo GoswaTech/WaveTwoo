@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "bootstrap-icons": "^1.1.0"
+    "bootstrap": "^4.5.3",
+    "bootstrap-icons": "^1.1.0",
+    "lazyload": "^2.0.0-rc.2"
   }
 }

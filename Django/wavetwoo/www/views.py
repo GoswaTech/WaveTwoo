@@ -3,4 +3,9 @@ from django.shortcuts import render, redirect
 # Create your views here.
 def index(request):
 
-    return redirect('snap_history')
+    urls = [
+        'snap_history',
+        'cooktea_home',
+    ]
+
+    return redirect(urls[1])
