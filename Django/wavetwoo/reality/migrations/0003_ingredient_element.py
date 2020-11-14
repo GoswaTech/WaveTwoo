@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='ingredient',
             name='element',
-            field=models.CharField(choices=[('red', 'Terre'), ('orange', 'Eau'), ('green', 'Air'), ('yellow', 'Feu')], default=('red', 'Terre'), max_length=7),
+            field=models.CharField(choices=[('red', 'Terre'), ('orange', 'Eau'), ('green', 'Air'), ('yellow', 'Feu')], default=('red'), max_length=7),
         ),
     ]
