@@ -6,6 +6,8 @@ class Cooktsu(models.Model):
     alchemy_name = models.CharField(max_length=23)
     name = models.CharField(max_length=23)
 
+    description = models.TextField(max_length=2047)
+
     image = models.ImageField(upload_to='reality/cooktsu/', null=True, blank=True)
 
     #terre

@@ -1,12 +1,15 @@
 {% extends "reality/base.html.django" %}
 
+{% load static %}
+
+
 {% block title %}{{ block.super }} - Cooktsu : {{ cooktsu.alchemy_name }}{% endblock title %}
 
 {% block main %}
 
 <main class="container mt-5 pt-5">
 
-  <div class="card p-5 position-relative text-light">
+  <div class="card p-2 position-relative text-light">
     {% if cooktsu.image %}
     <img class="background" src="{{ cooktsu.image.url }}" alt="Cooktsu Image">
     {% else %}
@@ -25,99 +28,131 @@
       </div>
     </div>
     <div class="card-body position-relative">
-      <div class="row text-dark text-center">
-        <div class="p-3 col-md-6 col-12 bg-red">
-          <h3>Ingrédients Terre</h3>
-          <ul class="list-group m-3">
+
+      <div class="d-flex flex-wrap p-3">
+
+        <div class="col-12 col-md-6 col-lg-4 order-2 order-md-1">
+          <ul class="list-group ingredients">
+
+            <h3 class="px-2">Ingrédients</h3>
+
             {% for ingredient in cooktsu.get_red_ingredients %}
-              <li class="list-group-item">
-                {{ ingredient.name }} : {{ ingredient.quantity }}
-              </li>
+            <li class="list-group-item ingredient bg-red">
+              {{ ingredient.name }}
+              <div class="quantity bg-red-full">
+                {{ ingredient.quantity }}
+              </div>
+            </li>
             {% endfor %}
-          </ul>
-        </div>
-        <div class="p-3 col-md-6 col-12 bg-orange">
-          <h3>Ingrédients Eau</h3>
-          <ul class="list-group m-3">
+
             {% for ingredient in cooktsu.get_orange_ingredients %}
-              <li class="list-group-item">
-                {{ ingredient.name }} : {{ ingredient.quantity }}
-              </li>
+            <li class="list-group-item ingredient bg-orange">
+              {{ ingredient.name }}
+              <div class="quantity bg-orange-full">
+                {{ ingredient.quantity }}
+              </div>
+            </li>
             {% endfor %}
-          </ul>
-        </div>
-        <div class="p-3 col-md-6 col-12 bg-green">
-          <h3>Ingrédients Air</h3>
-          <ul class="list-group m-3">
+
             {% for ingredient in cooktsu.get_green_ingredients %}
-              <li class="list-group-item">
-                {{ ingredient.name }} : {{ ingredient.quantity }}
-              </li>
+            <li class="list-group-item ingredient bg-green">
+              {{ ingredient.name }}
+              <div class="quantity bg-green-full">
+                {{ ingredient.quantity }}
+              </div>
+            </li>
             {% endfor %}
-          </ul>
-        </div>
-        <div class="p-3 col-md-6 col-12 bg-yellow">
-          <h3>Ingrédients Feu</h3>
-          <ul class="list-group m-3">
+
             {% for ingredient in cooktsu.get_yellow_ingredients %}
-              <li class="list-group-item">
-                {{ ingredient.name }} : {{ ingredient.quantity }}
-              </li>
+            <li class="list-group-item ingredient bg-yellow">
+              {{ ingredient.name }}
+              <div class="quantity bg-yellow-full">
+                {{ ingredient.quantity }}
+              </div>
+            </li>
             {% endfor %}
+
           </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-8 order-1 order-md-2">
+          <div class="d-flex flex-column justify-content-center align-items-stretch">
+
+            <h3 class="px-2">Instructions</h3>
+            <p>{{ cooktsu.description }}</p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div id="red" class="card cooktsu-step bg-red">
+    <img class="background" src="https://source.unsplash.com/random/" alt="">
+
+    <div class="card-body h-100">
+      <div class="d-flex flex-wrap h-100">
+        <div class="element col-12 col-md-2 h-100">
+          <img class="element" src="{% static "reality/cooktea/img/earth.webp" %}" alt="Earth">
+        </div>
+        <div class="description col-12 col-md-9">
+          <p>
+            {{ cooktsu.red.description }}
+          </p>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="red" class="card bg-red">
-    <div class="card-body">
-      <div class="card-text">
-        <h3>
-          <i>terre</i>
-        </h3>
-        <p>
-          {{ cooktsu.red.description }}
-        </p>
+  <div id="orange" class="card cooktsu-step bg-orange">
+    <img class="background" src="https://source.unsplash.com/random/" alt="">
+
+    <div class="card-body h-199">
+      <div class="d-flex flex-wrap h-100">
+        <div class="element col-12 col-md-2 h-100">
+          <img class="element" src="{% static "reality/cooktea/img/water.webp" %}" alt="Water">
+        </div>
+        <div class="description col-12 col-md-9">
+          <p>
+            {{ cooktsu.orange.description }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div id="orange" class="card bg-orange">
-    <div class="card-body">
-      <div class="card-text">
-        <h3>
-          <i>eau</i>
-        </h3>
-        <p>
-          {{ cooktsu.orange.description }}
-        </p>
+  <div id="green" class="card cooktsu-step bg-green">
+    <img class="background" src="https://source.unsplash.com/random/" alt="">
+
+    <div class="card-body h-199">
+      <div class="d-flex flex-wrap h-100">
+        <div class="element col-12 col-md-2 h-100">
+          <img class="element" src="{% static "reality/cooktea/img/air.webp" %}" alt="Air">
+        </div>
+        <div class="description col-12 col-md-9">
+          <p>
+            {{ cooktsu.green.description }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div id="green" class="card bg-green">
-    <div class="card-body">
-      <div class="card-text">
-        <h3>
-          <i>air</i>
-        </h3>
-        <p>
-          {{ cooktsu.green.description }}
-        </p>
-      </div>
-    </div>
-  </div>
+  <div id="yellow" class="card cooktsu-step bg-yellow">
+    <img class="background" src="https://source.unsplash.com/random/" alt="">
 
-  <div id="yellow" class="card bg-yellow">
-    <div class="card-body">
-      <div class="card-text">
-        <h3>
-          <i>feu</i>
-        </h3>
-        <p>
-          {{ cooktsu.yellow.description }}
-        </p>
+    <div class="card-body h-199">
+      <div class="d-flex flex-wrap h-100">
+        <div class="element col-12 col-md-2 h-100">
+          <img class="element" src="{% static "reality/cooktea/img/fire.webp" %}" alt="Fire">
+        </div>
+        <div class="description col-12 col-md-9">
+          <p>
+            {{ cooktsu.yellow.description }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
