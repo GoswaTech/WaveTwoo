@@ -9,11 +9,11 @@
 
 <main class="container mt-5 pt-5">
 
-  <div class="card p-2 position-relative text-light">
+  <div class="card p-2 position-relative text-light border-dark">
     {% if cooktsu.image %}
     <img class="background" src="{{ cooktsu.image.url }}" alt="Cooktsu Image">
     {% else %}
-    <img class="background" src="https://source.unsplash.com/random/" alt="Cooktsu Image">
+    <img class="background" src="https://source.unsplash.com/uQs1802D0CQ/" alt="Cooktsu Image">
     {% endif %}
     <i class="filter"></i>
     <div class="card-body position-relative">
@@ -34,7 +34,7 @@
         <div class="col-12 col-md-6 col-lg-4 order-2 order-md-1">
           <ul class="list-group ingredients">
 
-            <h3 class="px-2">Ingrédients</h3>
+            <h3 class="px-2 pb-3">Ingrédients</h3>
 
             {% for ingredient in cooktsu.get_red_ingredients %}
             <li class="list-group-item ingredient bg-red">
@@ -78,8 +78,10 @@
         <div class="col-12 col-md-6 col-lg-8 order-1 order-md-2">
           <div class="d-flex flex-column justify-content-center align-items-stretch">
 
-            <h3 class="px-2">Instructions</h3>
-            <p>{{ cooktsu.description }}</p>
+            <h3 class="px-2 pb-3">Quelques mots sur la recette</h3>
+            <p class="text-justify">
+              {{ cooktsu.description }}
+            </p>
 
           </div>
         </div>
@@ -89,8 +91,8 @@
     </div>
   </div>
 
-  <div id="red" class="card cooktsu-step bg-red">
-    <img class="background" src="https://source.unsplash.com/random/" alt="">
+  <div id="red" class="card cooktsu-step bg-red-no my-2 border-dark">
+    <img class="background" src="https://source.unsplash.com/F-BwatcPqnw/" alt="">
 
     <div class="card-body h-100">
       <div class="d-flex flex-wrap h-100">
@@ -106,8 +108,8 @@
     </div>
   </div>
 
-  <div id="orange" class="card cooktsu-step bg-orange">
-    <img class="background" src="https://source.unsplash.com/random/" alt="">
+  <div id="orange" class="card cooktsu-step bg-orange-no my-2 border-dark">
+    <img class="background" src="https://source.unsplash.com/HlQf_iNy9ug/" alt="">
 
     <div class="card-body h-199">
       <div class="d-flex flex-wrap h-100">
@@ -123,8 +125,8 @@
     </div>
   </div>
 
-  <div id="green" class="card cooktsu-step bg-green">
-    <img class="background" src="https://source.unsplash.com/random/" alt="">
+  <div id="green" class="card cooktsu-step bg-green-no my-2 border-dark">
+    <img class="background" src="https://source.unsplash.com/vKZFvyRicAU/" alt="">
 
     <div class="card-body h-199">
       <div class="d-flex flex-wrap h-100">
@@ -140,8 +142,8 @@
     </div>
   </div>
 
-  <div id="yellow" class="card cooktsu-step bg-yellow">
-    <img class="background" src="https://source.unsplash.com/random/" alt="">
+  <div id="yellow" class="card cooktsu-step bg-yellow-no my-2 border-dark">
+    <img class="background" src="https://source.unsplash.com/-AbeoL252z0/" alt="">
 
     <div class="card-body h-199">
       <div class="d-flex flex-wrap h-100">

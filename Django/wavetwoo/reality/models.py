@@ -43,6 +43,7 @@ class Cooktsu(models.Model):
 class Transmutation(models.Model):
 
     description = models.TextField(max_length=2047)
+    #image = models.ImageField(upload_to='reality/transmutation/', null=True, blank=True)
 
     def __str__(self):
         return '{0} {1}'.format(self.id, self.description)

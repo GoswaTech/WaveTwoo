@@ -4,59 +4,99 @@
 {% block title %}{{ block.super }} - Home{% endblock title %}
 
 {% block main %}
-<main class="container mt-5 pt-5">
+<main class="container mt-5 pt-5 text-light">
 
-<div class="row">
-  {% for cooktsu in cooktsus %}
-  <div class="col-12">
-    <div class="card shadow">
-      <div class="card-body">
-        <div class="row">
+  <h1 class="mb-5">
+    <strong>Les Recettes</strong>
+  </h1>
 
-          <div class="col-lg-7 col-md-5 col-12 d-flex">
-            <div class="card text-light position-relative w-100">
-              {% if cooktsu.image %}
-              <img class="background" src="{{ cooktsu.image.url }}" alt="Cooktsu Image">
-              {% else %}
-              <img class="background" src="https://source.unsplash.com/random/" alt="Cooktsu Image">
-              {% endif %}
-              <i class="filter dark-42"></i>
-              <div class="card-body position-relative d-flex flex-column justify-content-center">
-                <div class="card-text text-center">
-                  <h1>
-                    {{ cooktsu.alchemy_name }}
-                  </h1>
-                  <h2>
-                    <small>
-                      {{ cooktsu.name }}
+  <div class="row">
+    {% for cooktsu in cooktsus %}
+    <div class="col-12">
+      <div class="card bg-dark text-light shadow">
+        <div class="card-body">
+          <div class="row">
 
-                    </small>
-                  </h2>
-                  <a class="m-3 btn btn-primary shadow" href="{% url 'cooktea_cooktsu' id=cooktsu.id %}">lire recette</a>
+            <div class="col-lg-7 col-md-5 col-12 d-flex">
+              <div class="card shadow border-dark text-light position-relative w-100">
+                {% if cooktsu.image %}
+                <img class="background" src="{{ cooktsu.image.url }}" alt="Cooktsu Image">
+                {% else %}
+                <img class="background" src="https://source.unsplash.com/uQs1802D0CQ/" alt="Cooktsu Image">
+                {% endif %}
+                <i class="filter dark-42"></i>
+                <div class="card-body position-relative d-flex flex-column justify-content-center">
+                  <div class="card-text text-center">
+                    <h1>
+                      {{ cooktsu.alchemy_name }}
+                    </h1>
+                    <h2>
+                      <small>
+                        {{ cooktsu.name }}
+
+                      </small>
+                    </h2>
+                    <p>
+                      {{ cooktsu.description }}
+                    </p>
+                    <a class="m-3 btn btn-primary shadow" href="{% url 'cooktea_cooktsu' id=cooktsu.id %}">lire recette</a>
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="col-lg-5 col-md-7 col-12 my-3">
+
+              <h3 class="text-center">
+                Ingrédients
+              </h3>
+
+              <ul class="list-group ingredients text-light shadow">
+                {% for ingredient in cooktsu.get_red_ingredients %}
+                <li class="list-group-item ingredient bg-red">
+                  {{ ingredient.name }}
+                  <div class="quantity bg-red-full">
+                    {{ ingredient.quantity }}
+                  </div>
+                </li>
+                {% endfor %}
+
+                {% for ingredient in cooktsu.get_orange_ingredients %}
+                <li class="list-group-item ingredient bg-orange">
+                  {{ ingredient.name }}
+                  <div class="quantity bg-orange-full">
+                    {{ ingredient.quantity }}
+                  </div>
+                </li>
+                {% endfor %}
+
+                {% for ingredient in cooktsu.get_green_ingredients %}
+                <li class="list-group-item ingredient bg-green">
+                  {{ ingredient.name }}
+                  <div class="quantity bg-green-full">
+                    {{ ingredient.quantity }}
+                  </div>
+                </li>
+                {% endfor %}
+
+                {% for ingredient in cooktsu.get_yellow_ingredients %}
+                <li class="list-group-item ingredient bg-yellow">
+                  {{ ingredient.name }}
+                  <div class="quantity bg-yellow-full">
+                    {{ ingredient.quantity }}
+                  </div>
+                </li>
+                {% endfor %}
+
+              </ul>
+
+            </div>
+
           </div>
-          <div class="col-lg-5 col-md-7 col-12 my-3">
-            <h3 class="text-center">
-              Ingrédients
-            </h3>
-
-            <ul class="list-group">
-              {% for ingredient in cooktsu.ingredients.all %}
-              <li class="list-group-item">{{ ingredient.name }} : {{ ingredient.quantity }}</li>
-              {% endfor %}
-
-            </ul>
-
-          </div>
-
         </div>
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
 
 </main>
 {% endblock main %}
