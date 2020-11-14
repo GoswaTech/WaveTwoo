@@ -7,7 +7,11 @@
 <main class="container mt-5 pt-5">
 
   <div class="card p-5 position-relative text-light">
+    {% if cooktsu.image %}
+    <img class="background" src="{{ cooktsu.image.url }}" alt="Cooktsu Image">
+    {% else %}
     <img class="background" src="https://source.unsplash.com/random/" alt="Cooktsu Image">
+    {% endif %}
     <i class="filter"></i>
     <div class="card-body position-relative">
       <div class="card-text text-center">

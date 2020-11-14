@@ -6,6 +6,8 @@ class Cooktsu(models.Model):
     alchemy_name = models.CharField(max_length=23)
     name = models.CharField(max_length=23)
 
+    image = models.ImageField(upload_to='reality/cooktsu/', null=True, blank=True)
+
     #terre
     red = models.ForeignKey('Transmutation', on_delete=models.CASCADE, unique=True, related_name="cooktsu_red")
     #eau

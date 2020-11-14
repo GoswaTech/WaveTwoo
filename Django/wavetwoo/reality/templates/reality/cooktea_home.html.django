@@ -15,7 +15,11 @@
 
           <div class="col-lg-7 col-md-5 col-12 d-flex">
             <div class="card text-light position-relative w-100">
+              {% if cooktsu.image %}
+              <img class="background" src="{{ cooktsu.image.url }}" alt="Cooktsu Image">
+              {% else %}
               <img class="background" src="https://source.unsplash.com/random/" alt="Cooktsu Image">
+              {% endif %}
               <i class="filter dark-42"></i>
               <div class="card-body position-relative d-flex flex-column justify-content-center">
                 <div class="card-text text-center">
