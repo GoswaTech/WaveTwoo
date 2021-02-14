@@ -8,4 +8,7 @@ def index(request):
         'cooktea_home',
     ]
 
-    return redirect(urls[1])
+    context = {}
+
+    #return redirect(urls[1])
+    return render(request, 'www/index.html.django', context)

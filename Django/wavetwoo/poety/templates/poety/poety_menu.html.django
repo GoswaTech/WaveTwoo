@@ -1,0 +1,57 @@
+{% extends "www/base.html.django" %}
+
+{% load static %}
+
+
+{% block title %}{{ block.super }}- Poety - Home{% endblock title %}
+
+
+{% block stylesheets %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static "poety/css/master.css" %}">
+<link rel="stylesheet" href="{% static "poety/css/home.css" %}">
+{% endblock stylesheets %}
+
+
+{% block navbar %}
+  {% include "poety/navbar.html.django" with h1_title='Poety' %}
+{% endblock navbar %}
+
+
+{% block main %}
+<main id="home" class="container p-3">
+
+  <h1 class="p-3 text-center">
+    POETY
+    <br>
+    <small>La poésie digitale</small>
+  </h1>
+
+  <hr>
+
+  <h2>Snap Histories</h2>
+
+  <article class="poety-cards row p-3">
+
+    {% for history in snap_histories %}
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3 py-2">
+        <div class="card bg-dark shadow">
+          <div class="card-header">
+            <h3>{{ history.name }}</h3>
+          </div>
+          <div class="card-body">
+            <p>{{ history.description }}</p>
+          </div>
+          <div class="card-footer">
+            <a class="btn btn-warning" href="{% url 'snap_history' slug=history.slug %}">
+              lire l'histoire
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+  </article>
+
+</main>
+{% endblock main %}

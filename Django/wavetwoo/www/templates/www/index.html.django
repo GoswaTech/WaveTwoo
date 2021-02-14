@@ -1,0 +1,27 @@
+{% extends "www/base.html.django" %}
+
+{% block main %}
+
+  <div class="container">
+
+    <h1>WaveTwoo</h1>
+
+    <p>
+      Ce site est en cours de développement, mais ce qui est mis en ligne est
+      bel et bien fonctionnel, allez donc faire un tour dans mon monde ! ;)
+    </p>
+
+    <h2>Plan du Site</h2>
+
+    <ul>
+      <li>
+        <a href="{% url 'poety_home' %}">Poety : Un site poétique</a>
+      </li>
+      <li>
+        <a href="{% url 'cooktea_home' %}">Cooktea : Mes merveilleuses recettes</a>
+      </li>
+    </ul>
+
+  </div>
+
+{% endblock main %}

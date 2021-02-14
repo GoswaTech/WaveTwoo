@@ -4,5 +4,6 @@ from . import views
 
 
 urlpatterns = [
-    path('snap_history/', views.snap_history, name='snap_history'),
+    path('home/', views.poety_menu, name='poety_home'),
+    path('snap_history/<slug:slug>/', views.snap_history, name='snap_history'),
 ]

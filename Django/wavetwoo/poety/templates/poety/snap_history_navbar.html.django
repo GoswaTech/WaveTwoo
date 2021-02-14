@@ -5,7 +5,8 @@
     <div class="background">
       <h2 class="text-center">
         <a href="{% url 'index' %}">WaveTwoo</a>
-        > {{ h1_title }}
+        > <a href="{% url 'poety_home' %}">Poety</a>
+        > Snap History
       </h2>
       <div class="other-pages">
         <p>
