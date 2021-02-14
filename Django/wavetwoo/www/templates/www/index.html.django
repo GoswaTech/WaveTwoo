@@ -18,7 +18,12 @@
         <a href="{% url 'poety_home' %}">Poety : Un site poétique</a>
       </li>
       <li>
-        <a href="{% url 'cooktea_home' %}">Cooktea : Mes merveilleuses recettes</a>
+        Reality : Un site réaliste
+        <ul>
+          <li>
+            <a href="{% url 'cooktea_home' %}">Cooktea : Mes merveilleuses recettes</a>
+          </li>
+        </ul>
       </li>
     </ul>
 
